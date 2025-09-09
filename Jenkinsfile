@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "🔄 Checking out code from GitHub..."
-                git branch: 'main', 'https://github.com/VanshikaKarun/messaging-api-app.git'
+                git branch: 'main', url: 'https://github.com/VanshikaKarun/messaging-api-app.git'
             }
         }
 
@@ -74,7 +74,6 @@ pipeline {
     post {
         success {
             echo "✅ Build Successful!"
-            // ⛔ Removed JUnit step to avoid UNSTABLE build due to failed tests
         }
         failure {
             echo "❌ Build Failed! Please check the logs."
